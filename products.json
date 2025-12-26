@@ -1,0 +1,113 @@
+{
+  "currency": "USD",
+  "categories": [
+    "Itineraries (PDF)",
+    "Checklists",
+    "Logistics Guides",
+    "Interactive Maps",
+    "Photography",
+    "Consultation"
+  ],
+  "products": [
+    {
+      "id": "golden-triangle-7-budget",
+      "name": "Golden Triangle (7 Days) — Budget Blueprint",
+      "category": "Itineraries (PDF)",
+      "price": 10,
+      "summary": "Victoria Falls + Hwange + simplified Zambezi plan with cost controls, transfer logic, and packing list.",
+      "deliverable": "PDF export (Print → Save as PDF) + checklist",
+      "coverImage": "assets/images/shop/golden-triangle-7.jpg",
+      "featured": true
+    },
+    {
+      "id": "golden-triangle-10-luxury",
+      "name": "Golden Triangle (10 Days) — Luxury Safari Planner",
+      "category": "Itineraries (PDF)",
+      "price": 25,
+      "summary": "Premium routing, comfort options, fly/road decision logic, and supplier confirmation workflow.",
+      "deliverable": "PDF export + premium planning checklist",
+      "coverImage": "assets/images/shop/golden-triangle-10.jpg",
+      "featured": true
+    },
+    {
+      "id": "self-drive-kit",
+      "name": "Zimbabwe Self-Drive Kit",
+      "category": "Itineraries (PDF)",
+      "price": 15,
+      "summary": "Self-drive routing logic, vehicle readiness checklist, and compliance-focused travel prep.",
+      "deliverable": "PDF export (Print → Save as PDF)",
+      "coverImage": "assets/images/shop/self-drive.jpg",
+      "featured": false
+    },
+    {
+      "id": "safari-packing-list",
+      "name": "Zimbabwe Safari Packing List (Health + Power + Clothing)",
+      "category": "Checklists",
+      "price": 7,
+      "summary": "Packing guidance, medical kit outline, malaria-area planning prompts, and power checklist.",
+      "deliverable": "Checklist PDF export",
+      "coverImage": "assets/images/shop/packing.jpg",
+      "featured": false
+    },
+    {
+      "id": "victoria-falls-activity-bible",
+      "name": "Victoria Falls Activity Bible",
+      "category": "Checklists",
+      "price": 12,
+      "summary": "Activity planning matrix: timing, expectations, and budgeting notes.",
+      "deliverable": "PDF export",
+      "coverImage": "assets/images/shop/vicfalls-activities.jpg",
+      "featured": true
+    },
+    {
+      "id": "money-logistics-sheet",
+      "name": "Money & Payments Quick Sheet (ZiG / USD planning)",
+      "category": "Logistics Guides",
+      "price": 10,
+      "summary": "Practical currency reality, card acceptance expectations, and cash planning strategy.",
+      "deliverable": "PDF export",
+      "coverImage": "assets/images/shop/money.jpg",
+      "featured": false
+    },
+    {
+      "id": "border-handbook",
+      "name": "Border Crossing Handbook (Compliance Guide)",
+      "category": "Logistics Guides",
+      "price": 15,
+      "summary": "Checklist: documents to prepare, common crossings, and risk-reduction planning.",
+      "deliverable": "PDF export",
+      "coverImage": "assets/images/shop/border.jpg",
+      "featured": false
+    },
+    {
+      "id": "secret-pins-map",
+      "name": "Private Google Maps Layer — Secret Pins (Zimbabwe)",
+      "category": "Interactive Maps",
+      "price": 15,
+      "summary": "A private Google My Maps layer with curated pins and planning structure.",
+      "deliverable": "Private link delivery",
+      "coverImage": "assets/images/shop/secret-pins.jpg",
+      "featured": true
+    },
+    {
+      "id": "photo-presets",
+      "name": "Safari Glow Photo Presets (Lightroom)",
+      "category": "Photography",
+      "price": 19,
+      "summary": "Preset pack concept for consistent safari color grading.",
+      "deliverable": "Preset file delivery",
+      "coverImage": "assets/images/shop/presets.jpg",
+      "featured": false
+    },
+    {
+      "id": "trip-review",
+      "name": "Paid Trip Review / Consultation",
+      "category": "Consultation",
+      "price": 49,
+      "summary": "You send your itinerary; receive structured review: routing realism, risk points, optimization.",
+      "deliverable": "Call + written notes",
+      "coverImage": "assets/images/shop/consult.jpg",
+      "featured": true
+    }
+  ]
+}

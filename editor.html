@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GeoTourismZim — CMS Editor</title>
+
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="stylesheet" href="editor.css" />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="top" role="banner">
+    <div class="wrap top__inner">
+      <div class="brand">
+        <div class="mark" aria-hidden="true">GZ</div>
+        <div>
+          <div class="name">GeoTourismZim — CMS Editor</div>
+          <div class="sub">Manage destinations and export JSON for the website.</div>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Editor actions">
+        <a class="btn" href="index.html">Back to site</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap" role="main">
+    <section class="panel hero" aria-label="Editor toolbar">
+      <div class="row">
+        <div class="col">
+          <h1 style="margin:0;">Destinations</h1>
+          <p class="muted" style="margin:6px 0 0 0;">
+            Load, edit, and export. Paste the output into <code>data.js</code>.
+          </p>
+        </div>
+
+        <div class="col tools" aria-label="Toolbar">
+          <button class="btn btn--primary" id="addNew" type="button">Add destination</button>
+          <button class="btn" id="loadFromDataJs" type="button">Load from site</button>
+          <button class="btn" id="downloadJson" type="button">Download JSON</button>
+          <button class="btn" id="copyJson" type="button">Copy JSON</button>
+
+          <label class="btn file" aria-label="Import JSON">
+            Import JSON
+            <input type="file" id="importFile" accept=".json,application/json" />
+          </label>
+
+          <button class="btn btn--danger" id="resetEditor" type="button">Reset</button>
+        </div>
+      </div>
+
+      <div class="row" style="margin-top:12px;">
+        <input class="input" id="search" placeholder="Search destinations (name, region, type, tags)" />
+      </div>
+    </section>
+
+    <section class="grid" aria-label="Editor layout">
+      <aside class="list panel" aria-label="Destination list">
+        <div class="section-head">
+          <h2 style="margin:0;">List</h2>
+          <div class="muted"><span id="count">0</span></div>
+        </div>
+
+        <div id="list" style="margin-top:12px;"></div>
+      </aside>
+
+      <section class="editor panel" aria-label="Destination editor">
+        <div class="section-head">
+          <h2 style="margin:0;">Edit</h2>
+          <div class="muted" id="status">Select a destination from the list.</div>
+        </div>
+
+        <form id="form" class="form" autocomplete="off">
+          <div class="two">
+            <label>
+              <span>ID (unique)</span>
+              <input class="input" name="id" placeholder="e.g., victoria-falls" required />
+            </label>
+            <label>
+              <span>Name</span>
+              <input class="input" name="name" placeholder="e.g., Victoria Falls (Mosi-oa-Tunya)" required />
+            </label>
+          </div>
+
+          <div class="two">
+            <label>
+              <span>Region</span>
+              <input class="input" name="region" placeholder="e.g., Matabeleland North" />
+            </label>
+            <label>
+              <span>Type</span>
+              <input class="input" name="type" placeholder="e.g., Nature, Safari, Heritage" />
+            </label>
+          </div>
+
+          <label>
+            <span>Summary</span>
+            <textarea class="textarea" name="summary" rows="3" placeholder="Short, clear description for cards and SEO."></textarea>
+          </label>
+
+          <div class="two">
+            <label>
+              <span>Hero image path</span>
+              <input class="input" name="heroImage" placeholder="assets/images/destinations/victoria-falls.jpg" />
+            </label>
+
+            <div class="imgprev" aria-label="Image preview">
+              <div class="imgprev__label">Preview</div>
+              <div class="imgprev__box">
+                <img id="imgPreview" alt="Destination preview" />
+              </div>
+            </div>
+          </div>
+
+          <div class="two">
+            <label>
+              <span>Latitude</span>
+              <input class="input" name="lat" placeholder="-17.9243" inputmode="decimal" />
+            </label>
+            <label>
+              <span>Longitude</span>
+              <input class="input" name="lng" placeholder="25.8572" inputmode="decimal" />
+            </label>
+          </div>
+
+          <div class="two">
+            <label>
+              <span>Best time to visit</span>
+              <input class="input" name="bestTime" placeholder="e.g., Apr–Oct" />
+            </label>
+            <label>
+              <span>Budget range</span>
+              <input class="input" name="estimatedBudget" placeholder="e.g., $–$$$, Mid-range" />
+            </label>
+          </div>
+
+          <label>
+            <span>Base / stay hint</span>
+            <input class="input" name="stayHint" placeholder="e.g., Victoria Falls Town, Main Camp" />
+          </label>
+
+          <label>
+            <span>Tags (comma-separated)</span>
+            <input class="input" name="tags" placeholder="UNESCO, Adventure, Family-friendly" />
+          </label>
+
+          <label>
+            <span>Highlights (comma-separated)</span>
+            <input class="input" name="highlights" placeholder="Waterfall viewpoints, River cruise, Game drives" />
+          </label>
+
+          <label>
+            <span>Gallery images (comma-separated paths)</span>
+            <input class="input" name="gallery" placeholder="assets/images/destinations/victoria-falls.jpg, assets/images/destinations/victoria-falls-2.jpg" />
+          </label>
+
+          <div class="row buttons">
+            <button class="btn btn--primary" type="submit">Save</button>
+            <button class="btn btn--danger" type="button" id="delete">Delete</button>
+          </div>
+        </form>
+
+        <section class="panel" style="margin-top:12px;">
+          <div class="section-head">
+            <h3 style="margin:0;">Paste-ready JSON</h3>
+            <div class="muted">Sorted by name.</div>
+          </div>
+          <textarea class="textarea mono" id="output" rows="14" readonly></textarea>
+        </section>
+      </section>
+    </section>
+  </main>
+
+  <!-- This lets "Load from site" pull the current site dataset -->
+  <script src="data.js"></script>
+
+  <script src="editor.js"></script>
+</body>
+</html>

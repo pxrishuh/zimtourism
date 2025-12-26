@@ -1,0 +1,160 @@
+/* /print.css
+   Print → Save as PDF styling
+*/
+
+@page {
+  margin: 14mm;
+}
+
+* {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+html, body {
+  background: #ffffff !important;
+  color: #0B1220 !important;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+  line-height: 1.42 !important;
+}
+
+/* Remove UI chrome */
+.topbar,
+.footer,
+.hero,
+.skip-link,
+.drawer,
+.nav,
+.nav__toggle,
+.nav__links,
+#map,
+.map-wrap,
+.lead,
+.kicker {
+  display: none !important;
+}
+
+/* Expand content to full width */
+.container {
+  width: 100% !important;
+  margin: 0 !important;
+  max-width: none !important;
+}
+
+.main,
+.content {
+  padding: 0 !important;
+}
+
+/* Make cards look like a document */
+.card,
+.glass {
+  background: #ffffff !important;
+  border: 1px solid #E4E7EC !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-radius: 12px !important;
+  color: #0B1220 !important;
+}
+
+/* Prevent random “frosted” text colors */
+.muted {
+  color: #475467 !important;
+}
+
+h1, h2, h3, strong {
+  color: #0B1220 !important;
+}
+
+/* Section title formatting */
+.section-title {
+  margin: 0 0 10px 0 !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+.section-title h2 {
+  font-size: 18px !important;
+  margin: 0 !important;
+}
+
+/* Hide interactive elements */
+.btn,
+.tab,
+.pill,
+.pillrow,
+.controls,
+.disclosure,
+.ctaRow,
+.tags,
+.tag,
+input,
+select,
+textarea,
+button {
+  display: none !important;
+}
+
+/* Export document: ensure it prints nicely */
+#exportDoc {
+  border: 1px solid #D0D5DD !important;
+}
+
+#exportDoc .section-title {
+  display: block !important;
+  margin-bottom: 8px !important;
+}
+
+#exportDoc h2 {
+  font-size: 20px !important;
+  margin: 0 0 6px 0 !important;
+}
+
+#exportStamp {
+  font-size: 12px !important;
+  color: #475467 !important;
+}
+
+/* Bullet lists in PDF */
+.bullets {
+  margin: 8px 0 0 0 !important;
+  padding-left: 18px !important;
+}
+
+.bullets li {
+  margin: 5px 0 !important;
+}
+
+/* Keep blocks together */
+.card,
+.glass,
+.bullets,
+.section-title,
+#exportDoc {
+  break-inside: avoid !important;
+  page-break-inside: avoid !important;
+}
+
+/* Links: show as plain text (no ugly URLs) */
+a[href]:after {
+  content: "" !important;
+}
+
+/* If destination images appear inside the export body, print them cleanly */
+.dest-img {
+  border: 1px solid #E4E7EC !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  box-shadow: none !important;
+  min-height: 140px !important;
+}
+
+.dest-img__shade {
+  display: none !important;
+}
+
+.dest-img__fill {
+  filter: none !important;
+  transform: none !important;
+}
